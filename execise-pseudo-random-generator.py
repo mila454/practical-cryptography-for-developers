@@ -1,5 +1,4 @@
-
-iimport hashlib, time, binascii, hmac
+import hashlib, time, binascii, hmac
 
 msg = b"hello"
 key = b"0"
@@ -9,5 +8,6 @@ seed = hashlib.sha3_256(entropy).digest()
 print("seed = SHA-256(entropy) =", seed)
 
 for i in range(30):
-    rand = min + bigRand % (max - min + 1)
+    rand = 1 + int.from_bytes(entropy, byteorder = "big") - int.from_bytes(hmac.new(i.to_bytes(8, byteorder = "big", signed=True), seed, hashlib.sha256).digest(), byteorder = "big") % 10
     print(rand, " ")
+    

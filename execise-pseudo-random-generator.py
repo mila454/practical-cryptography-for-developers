@@ -1,6 +1,6 @@
 # Online Python - IDE, Editor, Compiler, Interpreter
 
-import hashlib, time, binasciib, hmac
+import hashlib, time, binascii, hmac
 
 msg = b"hello"
 entropy = hmac.new(key, msg, hashlib.sha256).digest()

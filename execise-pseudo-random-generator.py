@@ -9,5 +9,5 @@ print("seed = ", seed)
 
 for i in range(30):
     rand = 1 + (int.from_bytes(entropy, byteorder = "big") - int.from_bytes(hmac.new(i.to_bytes(8, byteorder = "big", signed=True), seed, hashlib.sha256).digest(), byteorder = "big")) % 10
-    print(rand, " ")
+   print(rand, " ", end = '')
     
